@@ -2,10 +2,13 @@ package com.vevo.hiring.snake;
 
 public class MySnakeGame implements SnakeGame {
 
+    Snake mySnake;
     Board myBoard;
 
     public MySnakeGame(int numberOfRows, int numberOfColumns) {
-        myBoard = new Board(numberOfRows, numberOfColumns);
+
+        mySnake = new Snake(0, 0);
+        myBoard = new Board(numberOfRows, numberOfColumns, mySnake);
     }
 
     public String getGameBoard() {
