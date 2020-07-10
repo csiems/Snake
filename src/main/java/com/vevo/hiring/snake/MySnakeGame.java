@@ -2,6 +2,10 @@ package com.vevo.hiring.snake;
 
 import java.util.logging.Logger;
 
+/**
+ * An implementation of the SnakeGame interface that calls
+ * the snake game logic.
+ */
 public class MySnakeGame implements SnakeGame {
 
     private static final Logger log = Logger.getLogger(MySnakeGame.class.getName());
@@ -46,6 +50,9 @@ public class MySnakeGame implements SnakeGame {
         }
     }
 
+    /**
+     * Returns the snake assigned to this game.
+     */
     public Snake getMySnake() {
 
         return mySnake;

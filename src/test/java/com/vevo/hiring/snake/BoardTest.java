@@ -16,6 +16,7 @@ class BoardTest {
 
     @BeforeEach
     void setUp() {
+
         Coordinate mockCoordinate1 = mock(Coordinate.class);
         when(mockCoordinate1.getRow()).thenReturn(2);
         when(mockCoordinate1.getColumn()).thenReturn(2);
@@ -29,7 +30,6 @@ class BoardTest {
                 new LinkedList<>(Arrays.asList(mockCoordinate1, mockCoordinate2)));
 
         subject = new Board(10, 10, mockSnake);
-
     }
 
     @Test

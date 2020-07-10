@@ -29,7 +29,6 @@ class MySnakeGameTest {
         String boardString = subject.getGameBoard();
         String firstColumn = boardString.substring(0, boardString.indexOf('\n'));
         assertEquals(10, firstColumn.length());
-
     }
 
     @Test
