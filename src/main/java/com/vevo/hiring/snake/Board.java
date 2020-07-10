@@ -5,30 +5,43 @@ import java.util.Arrays;
 public class Board {
 
     private final int numberOfRows;
-    private int numberOfColumns;
-    private Snake snake;
-    private char[][] rows;
+    private final int numberOfColumns;
+    private final Snake snake;
 
     public Board(int numberOfRows, int numberOfColumns, Snake snake) {
 
         this.numberOfRows = numberOfRows;
         this.numberOfColumns = numberOfColumns;
         this.snake = snake;
+    }
 
-        // set up empty board based on passed in rows and columns
-        rows = new char[numberOfRows][numberOfColumns];
-        for (char[] row : rows) {
+    private char[][] createBoardArray(Snake snake) {
+
+        // create an empty board
+        char[][] charArray = new char[getNumberOfRows()][getNumberOfColumns()];
+        for (char[] row : charArray) {
             Arrays.fill(row, '.');
         }
 
-        // add snake to board
+        // replace snake coordinates with x's
         for (Coordinate c : snake.getCoordinates()) {
-            rows[c.getRow()][c.getColumn()] = 'X';
+            charArray[c.getRow()][c.getColumn()] = 'X';
         }
-
+        return charArray;
     }
 
-    public char[][] getRows() {
-        return rows;
+    public char[][] getBoardArray() {
+
+        return createBoardArray(snake);
+    }
+
+    public int getNumberOfRows() {
+
+        return numberOfRows;
+    }
+
+    public int getNumberOfColumns() {
+
+        return numberOfColumns;
     }
 }
