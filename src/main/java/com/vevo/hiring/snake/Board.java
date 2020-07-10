@@ -15,6 +15,20 @@ public class Board {
         this.snake = snake;
     }
 
+    public char[][] getBoardArray() {
+        return createBoardArray(snake);
+    }
+
+    public int getNumberOfRows() {
+
+        return numberOfRows;
+    }
+
+    public int getNumberOfColumns() {
+
+        return numberOfColumns;
+    }
+
     private char[][] createBoardArray(Snake snake) {
 
         // create an empty board
@@ -28,20 +42,5 @@ public class Board {
             charArray[c.getRow()][c.getColumn()] = 'X';
         }
         return charArray;
-    }
-
-    public char[][] getBoardArray() {
-
-        return createBoardArray(snake);
-    }
-
-    public int getNumberOfRows() {
-
-        return numberOfRows;
-    }
-
-    public int getNumberOfColumns() {
-
-        return numberOfColumns;
     }
 }

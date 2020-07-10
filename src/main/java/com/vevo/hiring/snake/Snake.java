@@ -19,16 +19,8 @@ public class Snake {
         return coordinates;
     }
 
-    public void move(int row, int column, boolean isGrowing) {
-
-        Coordinate newHead = new Coordinate(row, column);
-        coordinates.addFirst(newHead);
-
-        if (!isGrowing) {
-            coordinates.removeLast();
-        }
-
-        head = newHead;
+    public Coordinate getHead() {
+        return head;
     }
 
     public void moveNorth(boolean isGrowing) {
@@ -48,4 +40,15 @@ public class Snake {
         move(head.getRow(), head.getColumn() - 1, isGrowing);
     }
 
+    private void move(int row, int column, boolean isGrowing) {
+
+        Coordinate newHead = new Coordinate(row, column);
+        coordinates.addFirst(newHead);
+
+        if (!isGrowing) {
+            coordinates.removeLast();
+        }
+
+        head = newHead;
+    }
 }

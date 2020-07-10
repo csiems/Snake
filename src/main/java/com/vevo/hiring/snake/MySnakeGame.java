@@ -46,4 +46,9 @@ public class MySnakeGame implements SnakeGame {
         }
     }
 
+    public Snake getMySnake() {
+
+        return mySnake;
+    }
+
 }
